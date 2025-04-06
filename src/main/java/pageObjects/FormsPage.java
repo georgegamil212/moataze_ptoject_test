@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class FormsPage extends AbstractComponent {
-    //Please include an '@' in the email address. 'gg' is missing an '@'.
+
     private WebDriver driver;
     public FormsPage(WebDriver driver){
         super(driver);

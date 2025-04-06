@@ -8,9 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageObjects.DragAndDropPage;
-import pageObjects.DynamicElementsPage;
-import pageObjects.TablesPage;
+import pageObjects.*;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -23,10 +21,18 @@ public class test1 extends BaseTest {
 
 
     @Test
-    public void test(){
+    public void test() throws InterruptedException {
 
-       DynamicElementsPage dynamicElementsPage = landingPage.goToDynamicElements();
-       Assert.assertEquals(dynamicElementsPage.getDynamicContentOne(),"Dynamic Content 1");
+      Slider slider = landingPage.goToSlider();
+      Thread.sleep(2000);
+      //System.out.println(slider.moveSlider(20));
+
+      Assert.assertEquals(slider.moveSlider(20),slider.getSliderValue());
+
+
+
+
+
 
 
 

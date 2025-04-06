@@ -55,19 +55,22 @@ public class LandingPage extends AbstractComponent {
         return new DynamicElementsPage(driver);
 
     }
-    public void goToHoverStates(){
+    public HoverStates goToHoverStates(){
         List<WebElement> about=testCards.stream().filter(card->card.getText().equalsIgnoreCase("Hover States")).collect(Collectors.toList());
         about.get(0).click();
+        return new HoverStates(driver);
 
     }
-    public void goToKeyPress(){
+    public KeyPress goToKeyPress(){
         List<WebElement> about=testCards.stream().filter(card->card.getText().equalsIgnoreCase("Key Press")).collect(Collectors.toList());
         about.get(0).click();
+        return new KeyPress(driver);
 
     }
-    public void goToSlider(){
+    public Slider goToSlider(){
         List<WebElement> about=testCards.stream().filter(card->card.getText().equalsIgnoreCase("Slider")).collect(Collectors.toList());
         about.get(0).click();
+        return new Slider(driver);
 
     }
     public void goToFileUpload(){
